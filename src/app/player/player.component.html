@@ -1,5 +1,5 @@
 <div>
-  <b>Name: </b> {{name}}
+  <b>Name: </b> {{(player | async)?.name}}
   <br>
-  <b>Raiting: </b> {{raiting}}
+  <b>Raiting: </b> {{(player | async)?.raiting}}
 </div>

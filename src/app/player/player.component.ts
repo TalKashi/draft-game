@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-player',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
-  name = 'Messi';
-  raiting = 98;
+  player;
 
-  constructor() { }
+  constructor(db: AngularFireDatabase) {
+    this.player = db.object('players/2018/messi').valueChanges();
+    console.log(this.player);
+   }
 
   ngOnInit() {
   }
