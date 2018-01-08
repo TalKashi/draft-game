@@ -12,8 +12,8 @@ export class PlayerComponent implements OnInit {
 
   constructor(db: AngularFireDatabase) {
     this.player = db.object('players/2018/messi').valueChanges();
-    console.log(this.player);
-   }
+    this.player.subscribe(player => console.log(player));
+  }
 
   ngOnInit() {
   }

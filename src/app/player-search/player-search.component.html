@@ -1,3 +1,8 @@
-<p>
-  player-search works!
-</p>
+<div>
+  <input type="text" placeholder="Player Name">
+</div>
+<div>
+  <li *ngFor="let player of players | async">
+    <span>Name: {{player.name}}. Raiting: {{player.raiting}}</span>
+  </li>
+</div>
