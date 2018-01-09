@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+import { Player } from '../player.service';
 
 @Component({
   selector: 'app-player',
@@ -8,11 +9,10 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
-  player;
+  player: Observable<Player>;
 
   constructor(db: AngularFireDatabase) {
-    this.player = db.object('players/2018/messi').valueChanges();
-    this.player.subscribe(player => console.log(player));
+    this.player = db.object<Player>('players/2018/messi').valueChanges();
   }
 
   ngOnInit() {

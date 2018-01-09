@@ -1,5 +1,5 @@
 <div>
-  <input type="text" placeholder="Player Name">
+  <input #searchBox type="text" placeholder="Player Name" (keyup)="search(searchBox.value)">
 </div>
 <div>
   <li *ngFor="let player of players | async">
