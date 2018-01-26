@@ -7,6 +7,7 @@
 
 # dependencies
 /node_modules
+/functions/node_modules
 
 # IDEs and editors
 /.idea
@@ -40,3 +41,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# keys
+dbcrawler/league-9a9ec-firebase-adminsdk-gi6bj-13a6c8b269.json

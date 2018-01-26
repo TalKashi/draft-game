@@ -3,5 +3,16 @@
     * make player service - DONE
 2. implement ajax search - DONE
 3. navigate to player
-    * extract players from pesdb.net
-    * import to firebase
+    * extract players from pesdb.net - DONE
+    * import to firebase - DONE
+    * display player profile
+4. League mode
+    * create league
+    * draft order
+    * fixtures
+    * one click generate new league upon this league final position
+5. Login
+    * implement routing
+    * create table for uid
+    * annonimous login + name
+    * facebook login

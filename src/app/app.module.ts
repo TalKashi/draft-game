@@ -12,13 +12,16 @@ import { AppComponent } from './app.component';
 import { PlayerComponent } from './player/player.component';
 import { PlayerSearchComponent } from './player-search/player-search.component';
 import { environment } from '../environments/environment.prod';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth.service'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayerComponent,
-    PlayerSearchComponent
+    PlayerSearchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,10 @@ import { environment } from '../environments/environment.prod';
     AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [PlayerService],
+  providers: [
+    PlayerService, 
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

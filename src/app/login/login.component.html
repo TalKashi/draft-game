@@ -1,0 +1,8 @@
+<div *ngIf="authState | async">
+  <p>logged in!</p>
+  <button (click)="logout()">Logout</button>
+</div>
+<div *ngIf="!(authState | async)">
+  <p>logged out!</p>
+  <button (click)="login()">Annonymous Login</button>
+</div>

@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "crawl": "node ./dbcrawler/pesdb-crawler",
-    "crawl:nodemon": "nodemon ./dbcrawler/pesdb-crawler"
+    "crawl:nodemon": "nodemon ./dbcrawler/pesdb-crawler",
+    "deployDB": "node ./dbcrawler/firebase"
   },
   "private": true,
   "dependencies": {
@@ -40,6 +41,7 @@
     "bluebird": "^3.5.1",
     "cheerio": "^1.0.0-rc.2",
     "codelyzer": "^4.0.1",
+    "firebase-admin": "^5.7.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
