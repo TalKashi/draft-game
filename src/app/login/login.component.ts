@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 export class LoginComponent implements OnInit {
   authState : Observable<any>;
 
-  constructor(private authSevice: AuthService) { }
+  constructor(private authSevice: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.authState = this.authSevice.getAuthState();
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
     console.log('clicked');
     this.authSevice.login()
     .then(user => {
-      // redirect to give name
+      // TODO: redirect to give name
+      this.router.navigate(['/changename']);
     });
   }
 

@@ -12,7 +12,8 @@
     * fixtures
     * one click generate new league upon this league final position
 5. Login
-    * implement routing
+    * implement routing - DONE
     * create table for uid - DONE
-    * annonimous login + name
+    * annonimous login + name - DONE
+    * Auth guard to change name route
     * facebook login
