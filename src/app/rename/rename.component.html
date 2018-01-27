@@ -1,0 +1,10 @@
+<div>
+  <form #renameForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name</label>
+      <input required type="text" placeholder="Enter your name" id="name" name="name" [(ngModel)]="name" #validator="ngModel">
+      <div [hidden]="validator.valid || validator.pristine">Name is required</div>
+    </div>
+    <button type="submit" [disabled]="!renameForm.form.valid">Submit</button>
+  </form>
+</div>

@@ -13,7 +13,8 @@ import { PlayerComponent } from './player/player.component';
 import { PlayerSearchComponent } from './player-search/player-search.component';
 import { environment } from '../environments/environment.prod';
 import { LoginComponent } from './login/login.component';
-import { AuthService } from './auth.service'
+import { AuthService } from './auth.service';
+import { RenameComponent } from './rename/rename.component'
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AuthService } from './auth.service'
     AppComponent,
     PlayerComponent,
     PlayerSearchComponent,
-    LoginComponent
+    LoginComponent,
+    RenameComponent
   ],
   imports: [
     BrowserModule,

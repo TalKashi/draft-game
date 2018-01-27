@@ -13,6 +13,6 @@
     * one click generate new league upon this league final position
 5. Login
     * implement routing
-    * create table for uid
+    * create table for uid - DONE
     * annonimous login + name
     * facebook login

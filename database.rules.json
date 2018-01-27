@@ -1,16 +1,11 @@
 {
   "rules": {
     ".read": true,
-    "leagues": {
-      "all": {
-        "$league_id": {
-          ".write": "auth != null && newData.exists()",
-          ".validate": "newData.hasChildren(['users', 'name']) && newData.child('name').isString()",
-          "users": {
-            "$uid": {
-              ".validate": "auth.uid === $uid && root.child('users').hasChild($uid)"
-            }
-          }
+    "users": {
+      "$uid": {
+        ".write": "$uid === auth.uid",
+        "name": {
+        ".validate": "newData.isString() && newData.val().length > 0"
         }
       }
     }

@@ -19,7 +19,10 @@ export class LoginComponent implements OnInit {
 
   login() {
     console.log('clicked');
-    this.authSevice.login();
+    this.authSevice.login()
+    .then(user => {
+      // redirect to give name
+    });
   }
 
   logout() {

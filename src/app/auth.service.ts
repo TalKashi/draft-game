@@ -7,19 +7,21 @@ export class AuthService {
   
 
   constructor(private afAuth: AngularFireAuth) {
-    // afAuth.authState
   }
 
   getAuthState() {
     return this.afAuth.authState;
   }
 
+  getCurrentUser() {
+    return this.afAuth.auth.currentUser;
+  }
+
   login() {
-    this.afAuth.auth.signInAnonymously();
+    return this.afAuth.auth.signInAnonymously();
   }
 
   logout() {
-    this.afAuth.auth.signOut();
+    return this.afAuth.auth.signOut();
   }
-
 }
