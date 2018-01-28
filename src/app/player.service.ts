@@ -10,11 +10,13 @@ export class PlayerService {
     this.players = db.list<Player>('players/2018/').valueChanges();
   }
 
-  searchPlayer(name: string) {
+  searchPlayer(name: string) : Observable<Player[]> {
     if(name.trim().length === 0) {
       return Observable.of([]);
     }
-    return this.players.map(players => players.filter(player => player.name.toLowerCase().includes(name.toLowerCase())));
+    return this.players.map(players => players.filter(player => player.name.toLowerCase().includes(name.toLowerCase())).sort((a, b) => {
+      return b.rating - a.rating;
+    }));
   }
 
   getPlayerById(id: string) : Observable<Player> {

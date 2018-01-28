@@ -2,6 +2,7 @@
 1. pull player data from firebase - DONE
     * make player service - DONE
 2. implement ajax search - DONE
+    * sort by rating - DONE
 3. navigate to player
     * extract players from pesdb.net - DONE
     * import to firebase - DONE
@@ -15,5 +16,5 @@
     * implement routing - DONE
     * create table for uid - DONE
     * annonimous login + name - DONE
-    * add AuthGuard to change name route
+    * add AuthGuard to change name route - DONE
     * facebook login
