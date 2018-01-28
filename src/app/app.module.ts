@@ -15,6 +15,7 @@ import { environment } from '../environments/environment.prod';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { RenameComponent } from './rename/rename.component'
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { RenameComponent } from './rename/rename.component'
   ],
   providers: [
     PlayerService, 
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
