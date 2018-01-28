@@ -9,9 +9,13 @@
     * display player profile
 4. League mode
     * create league
+        * create button
+        * users join
+        * draft order page
     * draft order
     * fixtures
-    * one click generate new league upon this league final position
+    * one click generate new league upon this league final position with same users
+        * add Hazan rule?
 5. Login
     * implement routing - DONE
     * create table for uid - DONE
