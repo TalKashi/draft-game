@@ -15,5 +15,5 @@
     * implement routing - DONE
     * create table for uid - DONE
     * annonimous login + name - DONE
-    * Auth guard to change name route
+    * add AuthGuard to change name route
     * facebook login

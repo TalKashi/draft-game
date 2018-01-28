@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-import { Player } from '../player.service';
+import { Player, PlayerService } from '../player.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ParamMap } from '@angular/router/src/shared';
 
 @Component({
   selector: 'app-player',
@@ -11,11 +12,11 @@ import { Player } from '../player.service';
 export class PlayerComponent implements OnInit {
   player: Observable<Player>;
 
-  constructor(db: AngularFireDatabase) {
-    this.player = db.object<Player>('players/2018/messi').valueChanges();
+  constructor(private playerService: PlayerService, private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.player = this.route.paramMap.switchMap((params: ParamMap) => this.playerService.getPlayerById(params.get('id')));
   }
 
 }

@@ -8,7 +8,6 @@ export class PlayerService {
 
   constructor(private db: AngularFireDatabase) { 
     this.players = db.list<Player>('players/2018/').valueChanges();
-    this.players.subscribe((players) => console.log('subscribe!. length=', players.length));
   }
 
   searchPlayer(name: string) {
@@ -17,9 +16,19 @@ export class PlayerService {
     }
     return this.players.map(players => players.filter(player => player.name.toLowerCase().includes(name.toLowerCase())));
   }
+
+  getPlayerById(id: string) : Observable<Player> {
+    return this.db.object<Player>(`players/2018/${id}`).valueChanges();
+  }
 }
 
 export class Player {
   name: string;
   rating: number;
+  age: number;
+  height: number;
+  nationality: string;
+  position: string;
+  teamn: string;
+  weight: number;
 }

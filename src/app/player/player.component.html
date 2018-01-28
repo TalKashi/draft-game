@@ -1,5 +1,6 @@
 <div>
   <b>Name: </b> {{(player | async)?.name}}
   <br>
-  <b>Raiting: </b> {{(player | async)?.raiting}}
+  <b>Raiting: </b> {{(player | async)?.rating}}
+  <br><pre>{{player | async | json}}</pre>
 </div>

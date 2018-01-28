@@ -3,12 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PlayerSearchComponent } from './player-search/player-search.component';
 import { RenameComponent } from './rename/rename.component';
+import { PlayerComponent } from './player/player.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'players/search', component: PlayerSearchComponent },
-  { path: 'changename', component: RenameComponent }
+  { path: 'players/:id', component: PlayerComponent },
+  { path: 'changename', component: RenameComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: '**', redirectTo: 'players/search', pathMatch: 'full' }
 ];
 
 @NgModule({
