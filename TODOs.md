@@ -1,6 +1,7 @@
 0. commit to git - DONE
 1. pull player data from firebase - DONE
-    * make player service - DONE
+    * make player service
+     - DONE
 2. implement ajax search - DONE
     * sort by rating - DONE
 3. navigate to player
@@ -11,7 +12,11 @@
     * create league
         * create button
         * users join
-        * draft order page
+            * display list of joined users
+        * draft order config page
+            * random selection mode    
+    * list all leagues
+        * list open (waiting for players) leagues
     * draft order
     * fixtures
     * one click generate new league upon this league final position with same users

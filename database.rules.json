@@ -1,11 +1,32 @@
 {
   "rules": {
     ".read": true,
+    "players": {
+      "2018": {
+        ".indexOn": ["rating"]
+      }
+    },
     "users": {
       "$uid": {
-        ".write": "$uid === auth.uid",
+        ".write": "$uid === auth.uid && newData.exists()",
         "name": {
         ".validate": "newData.isString() && newData.val().length > 0"
+        },
+        "$other": {
+          ".validate": "false"
+        }
+      }
+    },
+    "leagues": {
+      "$leagueId": {
+        "users": {
+          ".write": "null != auth.uid",
+          "$uid": {
+          	".validate": "$uid == auth.uid",
+            "$other": {
+              ".validate": "false"
+            }
+          }
         }
       }
     }

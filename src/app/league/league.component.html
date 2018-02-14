@@ -1,0 +1,6 @@
+<div>
+    <li *ngFor="let league of leagues | async">
+      <span>{{league | json}}</span> <button (click)='joinLeague(league.id)'>Join</button><button (click)='leaveLeague(league.id)'>Leave</button>
+    </li>
+  </div>
+<button (click)='createLeague()'>Create league</button>
