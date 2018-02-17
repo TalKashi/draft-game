@@ -42,16 +42,46 @@ export class LeagueComponent implements OnInit {
 
   joinLeague(id: string) {
     console.log(`joining league ${id}`);
-    const user = {};
-    user[this.auth.getCurrentUser().uid] = true;    
-    this.db.object(`leagues/${id}/users`).set(user);
+    // const user = {};
+    // user[this.auth.getCurrentUser().uid] = true;    
+    // this.db.object(`leagues/${id}/users`).set(user);
+
+    this.auth.getCurrentUser().getIdToken()
+      .then(token => {
+        console.log(`Got token: ${token}`);
+        this.http.get(`https://us-central1-league-9a9ec.cloudfunctions.net/api/league/${id}/join`, {
+          headers: new HttpHeaders({ 'Authorization': `Bearer ${token}` })
+        }).subscribe(data => console.log('Data: ', data));
+          // .pipe(
+          // tap(id => console.log(`Created league id is ${id}`)),
+          // catchError(err => {
+          //   console.error('Error:', err);
+          //   return of(null);
+          // }));
+      })
+      .catch(err => {
+        console.error('Error:', err);
+      });
   }
 
   leaveLeague(id: string) {
     console.log(`leaving league ${id}`);
-    const user = {};
-    user[this.auth.getCurrentUser().uid] = true;    
-    this.db.object(`leagues/${id}/users/${this.auth.getCurrentUser().uid}`).remove();
+    this.auth.getCurrentUser().getIdToken()
+      .then(token => {
+        console.log(`Got token: ${token}`);
+        this.http.get(`https://us-central1-league-9a9ec.cloudfunctions.net/api/league/${id}/leave`, {
+          headers: new HttpHeaders({ 'Authorization': `Bearer ${token}` })
+        }).subscribe(data => console.log('Data: ', data));
+          // .pipe(
+          // tap(id => console.log(`Created league id is ${id}`)),
+          // catchError(err => {
+          //   console.error('Error:', err);
+          //   return of(null);
+          // }));
+      })
+      .catch(err => {
+        console.error('Error:', err);
+      });
   }
 
 }

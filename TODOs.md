@@ -9,10 +9,11 @@
     * import to firebase - DONE
     * display player profile
 4. League mode
-    * create league
-        * create button
-        * users join
-            * display list of joined users
+    * create league -
+        * create button - DONE
+        * users join - DONE
+            * display list of joined users - DONE
+            * limit to 4 joins - DONE
         * draft order config page
             * random selection mode    
     * list all leagues
